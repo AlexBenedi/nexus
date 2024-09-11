@@ -12,9 +12,3 @@ resource "nexus_security_user" "create" {
   status    = each.value.status
 }
 
-resource "nexus_security_role" "create_role" {
-  for_each = var.teams
-
-  roleid = each.key
-  name = each.key
-}
