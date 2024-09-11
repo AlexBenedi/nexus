@@ -29,7 +29,10 @@ variable "users" {
 }
 
 variable "teams" {
-    type = map(set(string))
+    type = map(object({
+        users = set(string)
+        description = optional(string, "")
+    }))
 }
 
 /*
