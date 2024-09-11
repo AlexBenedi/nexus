@@ -1,0 +1,24 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/datadrivers/nexus" {
+  version     = "2.4.0"
+  constraints = "2.4.0"
+  hashes = [
+    "h1:/PZ4GzqNyFGI+aBfuc9cH/p+6bnrG6UEqjs0mlt1frA=",
+    "zh:1af81307ee01d37acc82f2981bcc6bc2f00daa49620b5ab1398256c812763870",
+    "zh:1b2ee679c01828f2dfdf024a4275b4b10cb570d2580d2399ffb45ecec17482a5",
+    "zh:2663f12e0d9e03fff652deaafa077b6cb3789823abbd3320f8ce8858de731f29",
+    "zh:280606681d1315223e2f0d2a6b580788542fd66073ac3299e5499959a2d2c55f",
+    "zh:2caefa97387f2d083d874b055e73d45bc44379fce4909e0881d6e0f43eb38579",
+    "zh:2d80b62e1253102cb5b1f5acad463142333c8152b389064f91ffa92d7bfe2e29",
+    "zh:39c75672456d5858346d6f27a1d3572d2736d5ec8d65b5010736800a0193433c",
+    "zh:4845671a344b23a36e4dc37e652dd01410fb0dcbb05552e177a1691ac812566a",
+    "zh:67e57105d81d4c4acb115b7536a75272dfe8ab849440fe9dea37e0621d8e7d1b",
+    "zh:9d201972b4f2a3d038e9299ddd35c6a56fb0a2bce36bb434e317b5d4d0cfed5d",
+    "zh:a3fe98e3121625178d686321a3e6bb26c730784c49473a5e15945313c064e2ad",
+    "zh:c190a64de75d5c18853f98ca3fc0ce402370ca883fcde091c5031a6285a60626",
+    "zh:d186a38f012c70b5a4b8f0c9339b39e3585d5b8e8c2f85d03b53f7d8e91772ed",
+    "zh:fce1f0c83273a119661541fdc99d6b362d0c5c863429f28090283515b068fcfa",
+  ]
+}
