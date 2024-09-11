@@ -17,7 +17,18 @@ users = {
 }
 
 teams = {
-  uno = ["prueba"]
-  dos = ["sec"]
-  tres = ["prueba", "sec"]
+  uno = {
+    users = ["prueba"]
+    description = "prueba"
+  }
+
+  dos = {
+    users = ["sec"]
+    description = "sec"
+  }
+  
+  tres = {
+    users = ["prueba, sec"]
+    description = "prueba sec"
+  }
 }
