@@ -32,3 +32,17 @@ teams = {
     description = "prueba sec"
   }
 }
+
+docker_repository = {
+  first = {
+    docker = {
+      force_basic_auth = true
+      v1_enabled = false
+      http_port = 8083
+    }
+
+    storage = {}
+
+    access = ["uno"]
+  }
+}
