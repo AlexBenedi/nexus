@@ -35,11 +35,10 @@ variable "teams" {
     }))
 }
 
-/*
 variable "docker_repository" {
     type = map(object({
 
-        name = string
+        #name = string
         online = optional(bool, true)
 
         docker = object({
@@ -51,9 +50,10 @@ variable "docker_repository" {
         })
 
         storage = object({
-          blob_store_name = string
-          strict_content_type_validation = bool
+          blob_store_name = optional(string, "default")
+          strict_content_type_validation = optional(bool, false)
           write_policy = optional(string) 
+          latest_policy = optional(bool)
         })
 
         cleanup = optional(object({
@@ -63,5 +63,4 @@ variable "docker_repository" {
         access = optional(set(string), [])
     }))
 }
-*/
 
