@@ -10,5 +10,9 @@ resource "nexus_security_user" "create" {
   password  = each.value.password
   roles     = ["nx-admin"]
   status    = each.value.status
+
+  lifecycle {
+    ignore_changes = [ password ]
+  }
 }
 
