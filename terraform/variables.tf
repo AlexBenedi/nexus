@@ -41,26 +41,36 @@ variable "docker_repository" {
         #name = string
         online = optional(bool, true)
 
-        docker = object({
-          force_basic_auth = bool
-          v1_enabled = bool
-          http_port = optional(number)
-          http_ports = optional(number)
-          subdomain = optional(string)
-        })
+        docker = optional(
+          object({
+            force_basic_auth = bool
+            v1_enabled = bool
+            http_port = optional(number)
+            http_ports = optional(number)
+            subdomain = optional(string)
+          }),
+          {
+            force_basic_auth = true
+            v1_enabled = false
+          }
+        )
 
-        storage = object({
-          blob_store_name = optional(string, "default")
-          strict_content_type_validation = optional(bool, false)
-          write_policy = optional(string) 
-          latest_policy = optional(bool)
+        storage = optional(
+          object({
+            blob_store_name = optional(string, "default")
+            strict_content_type_validation = optional(bool, false)
+            write_policy = optional(string) 
+        }),
+          {
+            blob_store_name = "default"
+            strict_content_type_validation = false
         })
 
         cleanup = optional(object({
             policy_names = optional(set(string), [])
         }))
 
-        access = optional(set(string), [])
+        access = optional(map(string), {})
     }))
 }
 
