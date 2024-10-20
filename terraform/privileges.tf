@@ -1,4 +1,6 @@
+# Wildcards privileges
 
+/*
 resource "nexus_privilege_wildcard" "read_privileges" {
     for_each = {
         for role, info in local.access_per_role : role => [
@@ -29,16 +31,8 @@ resource "nexus_privilege_wildcard" "write_privileges" {
     depends_on = [ local.access_per_role ]
 }
 
-output "debug" {
-  value = {
-        for role, info in local.access_per_role : role => [
-            for permission in info : permission.repository
-            if permission.permission == "write"
-        ]
-    }
-}
-
 locals {
+
   docker_access = flatten([
     for key, value in var.docker_repository : [
       for role, permission in value.access : {
@@ -60,3 +54,4 @@ locals {
     }...
   }
 }
+*/
