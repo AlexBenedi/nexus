@@ -5,7 +5,10 @@ resource "nexus_security_role" "create_role" {
   name = each.key
   description = each.value.description
 
-  privileges = [ "${each.key}-read-privilege", "${each.key}-write-privilege" ]
+  #privileges = contains(local.access_per_role.privilege.role, each.key) == true ? [ "${each.key}-read-privilege", "${each.key}-write-privilege" ] : []
+  privileges = anytrue([ for privilege in local.all_access : privilege.role == each.key
+  ]) ? [ "${each.key}-read-privilege", "${each.key}-write-privilege" ] : []
+
 
   depends_on =[nexus_privilege_wildcard.read_privileges, nexus_privilege_wildcard.write_privileges]
 }

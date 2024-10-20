@@ -59,6 +59,4 @@ locals {
       format = privilege.format
     }...
   }
-
-
 }
