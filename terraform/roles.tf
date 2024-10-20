@@ -1,4 +1,5 @@
-# Lo comentado se sa con wildcards privileges.
+# The commented lines use the wildcard privileges that are created in the “Privileges.tf” file. 
+#To use them uncomment the code in both files ( Privileges.tf and Role.tf )
 
 resource "nexus_security_role" "create_role" {
   for_each = merge(local.users_role, var.teams)
