@@ -53,7 +53,6 @@ locals {
   access_per_role = {
     for privilege in local.all_access : privilege.role => {
       repository = privilege.repository
-      #permission = privilege.permission == "read" ? ["read,browse"] : ["edit,add,delete"]
       format = privilege.format
       permission = coalesce(  # if / else if / else
         privilege.permission == "read" ? ["read", "browse"] : null, 

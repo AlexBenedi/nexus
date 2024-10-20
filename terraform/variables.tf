@@ -23,7 +23,7 @@ variable "users" {
         lastname = string
         password = optional(string, "")
         userid = string
-        #roles = optional(set(string), [])
+        roles = optional(set(string), [])
         status = optional(string, "active")
     }))
 }
