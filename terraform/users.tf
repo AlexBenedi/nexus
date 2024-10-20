@@ -14,5 +14,7 @@ resource "nexus_security_user" "create" {
   lifecycle {
     ignore_changes = [ password ]
   }
+
+  depends_on = [ nexus_security_role.create_role ]
 }
 
