@@ -14,6 +14,22 @@ users = {
     password = "pass"
     userid = "user_2"
   }
+
+  user_3 = {
+    email = "tres@gmail.com"
+    firstname = "sec"
+    lastname = "sec"
+    password = "pass"
+    userid = "user_3"
+  }
+
+  user_4 = {
+    email = "4@gmail.com"
+    firstname = "sec"
+    lastname = "sec"
+    password = "pass"
+    userid = "user_4"
+  }
 }
 
 teams = {
@@ -28,8 +44,13 @@ teams = {
   }
   
   team_tres = {
-    users = ["user_1, user_2"]
+    users = ["user_1", "user_2"]
     description = "team 1 y 2"
+  }
+
+  team_cuatro = {
+    users = ["user_3"]
+    description = "team 3"
   }
 }
 
@@ -44,6 +65,7 @@ docker_repository = {
     access = {
       team_uno = "read"
       team_dos = "write"
+      team_cuatro = "read"
     }
   }
 
@@ -57,6 +79,7 @@ docker_repository = {
     access = {
       team_uno = "write"
       team_tres = "read"
+      user_4 = "read"
     }
   }
 
