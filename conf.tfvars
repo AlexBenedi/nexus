@@ -1,48 +1,63 @@
 users = {
-  prueba = {
+  user_1 = {
     email = "prueba@gmail.com"
     firstname = "hola"
     lastname = "adios"
     password = "pass"
-    userid = "prueba"
+    userid = "user_1"
   }
 
-  segundo = {
+  user_2 = {
     email = "sec@gmail.com"
     firstname = "sec"
     lastname = "sec"
     password = "pass"
-    userid = "sec"
+    userid = "user_2"
   }
 }
 
 teams = {
-  uno = {
-    users = ["prueba"]
-    description = "prueba"
+  team_uno = {
+    users = ["user_1"]
+    description = "team 1"
   }
 
-  dos = {
-    users = ["sec"]
-    description = "sec"
+  team_dos = {
+    users = ["user_2"]
+    description = "team 2"
   }
   
-  tres = {
-    users = ["prueba, sec"]
-    description = "prueba sec"
+  team_tres = {
+    users = ["user_1, user_2"]
+    description = "team 1 y 2"
   }
 }
 
 docker_repository = {
-  first = {
+  repo_uno = {
     docker = {
       force_basic_auth = true
       v1_enabled = false
       http_port = 8083
     }
 
-    storage = {}
-
-    access = ["uno"]
+    access = {
+      team_uno = "read"
+      team_dos = "write"
+    }
   }
+
+  repo_dos = {
+    docker = {
+      force_basic_auth = true
+      v1_enabled = false
+      http_port = 8084
+    }
+
+    access = {
+      team_uno = "write"
+      team_tres = "read"
+    }
+  }
+
 }
