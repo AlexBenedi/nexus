@@ -1,5 +1,3 @@
-# The commented lines use the wildcard privileges that are created in the “Privileges.tf” file. 
-#To use them uncomment the code in both files ( Privileges.tf and Role.tf )
 
 resource "nexus_security_role" "create_role" {
   for_each = merge(local.users_role, var.teams)
@@ -8,8 +6,6 @@ resource "nexus_security_role" "create_role" {
   name = each.key
   description = each.value.description
 
-  #privileges = anytrue([ for privilege in local.all_access : privilege.role == each.key
-  #]) ? [ "${each.key}-read-privilege", "${each.key}-write-privilege" ] : []
   privileges = flatten([ 
     for role, privileges in local.access_per_role : [
       for priv in privileges : [
@@ -21,7 +17,6 @@ resource "nexus_security_role" "create_role" {
   ])
 
   depends_on = [ nexus_repository_docker_hosted.name ]
-  #depends_on =[nexus_privilege_wildcard.read_privileges, nexus_privilege_wildcard.write_privileges]
 }
 
 resource "nexus_security_role" "base-role" {
