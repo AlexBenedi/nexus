@@ -43,8 +43,8 @@ variable "docker_repository" {
 
         docker = optional(
           object({
-            force_basic_auth = bool
-            v1_enabled = bool
+            force_basic_auth = optional(bool, true)
+            v1_enabled = optional(bool, false)
             http_port = optional(number)
             http_ports = optional(number)
             subdomain = optional(string)
