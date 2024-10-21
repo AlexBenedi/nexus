@@ -33,29 +33,29 @@ users = {
 }
 
 teams = {
-  team_uno = {
+  team_one = {
     users = ["user_1"]
     description = "team 1"
   }
 
-  team_dos = {
+  team_two = {
     users = ["user_2"]
     description = "team 2"
   }
   
-  team_tres = {
+  team_three = {
     users = ["user_1", "user_2"]
     description = "team 1 y 2"
   }
 
-  team_cuatro = {
+  team_four = {
     users = ["user_3"]
     description = "team 3"
   }
 }
 
 docker_repository = {
-  repo_uno = {
+  repo_one = {
     docker = {
       force_basic_auth = true
       v1_enabled = false
@@ -69,7 +69,7 @@ docker_repository = {
     }
   }
 
-  repo_dos = {
+  repo_two = {
     docker = {
       force_basic_auth = true
       v1_enabled = false
