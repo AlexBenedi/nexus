@@ -1,6 +1,5 @@
 # Wildcards privileges
 
-/*
 resource "nexus_privilege_wildcard" "read_privileges" {
     for_each = {
         for role, info in local.access_per_role : role => [
@@ -54,4 +53,3 @@ locals {
     }...
   }
 }
-*/
