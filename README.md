@@ -5,6 +5,26 @@ El objetivo principal del proyecto es automatizar la gestión de usuarios, equip
 
 Esta configuracion se ha implementado unicamente para repositorios de tipo Docker, pero facilmente se podria ampliar para cualquier otro tipo de repositorio siempre que se respete las jeraquia de las vairables.
 
+## Puesta en marcha
+
+Crear un fichero ".env" con las variables secretas con el siguiente contenido:
+```
+TF_VAR_nexus_username=<username>
+TF_VAR_nexus_password=<pass>
+TF_VAR_nexus_url=<url>
+```
+
+Ejecutar los siguientes comandos para cargar las variables de entorno:
+```
+set -a
+source .env
+set +a
+```
+
+Ejecutar terraform
+```
+terraform apply -var-file=./../conf.tfvars
+```
 ## Configuracion
 La configuracion se plasma en el fichero de variables de entrada llamado conf.tfvars. Esta configuracion se basa en diferentes bloques: "users", "teams" y "docker_repository".
 
@@ -58,7 +78,7 @@ Este ejemplo crea 2 equipos diferentes: El equipo "team_one" tendra como miembro
 
 ### Repositorios docker
 
-COmo se ha comentado anteriormente, la automatizacion tan solo esta implementada para los repositorios de tipo docker. Para crear estos repositorios hay una serie de información fundamental la cual se tiene que rellenar para poder crear el repositorio.
+Como se ha comentado anteriormente, la automatizacion tan solo esta implementada para los repositorios de tipo docker. Para crear estos repositorios hay una serie de información fundamental la cual se tiene que rellenar para poder crear el repositorio.
 
 En la especificacion de los repositorios a crear, sera necesario rellenar informacion fundamental sobre el repositorio y se podra tambien añadir los usuarios y equipos que tendran acceso al repositorio asi como de que tipo.
 
